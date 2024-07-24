@@ -6,3 +6,5 @@
 - run `npm run start`
 
 ## Demo Video
+
+<video controls src="Screen Recording 2024-07-25 at 02.45.27.mp4" title="Title"></video>
