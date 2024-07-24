@@ -6,5 +6,5 @@
 - run `npm run start`
 
 ## Demo Video
+https://github.com/user-attachments/assets/4522a07f-38f0-4905-9d38-2bac28a79d85
 
-<video controls src="Screen Recording 2024-07-25 at 02.45.27.mp4" title="Title"></video>
