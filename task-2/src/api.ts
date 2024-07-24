@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Policy, PolicyUpdateData } from './types';
 
 const policyApi = axios.create({
-  baseURL: 'http://localhost:3001'
+  baseURL: process.env.REACT_APP_BASE_URL || 'http://localhost:3001'
 });
 
 export const getAllPolicies = async () => {
