@@ -16,7 +16,6 @@ app.use(router);
 app.use(errorHandler);
 
 const env = process.env.NODE_ENV;
-console.log({ env });
 
 const start = async () => {
   try {
@@ -24,8 +23,8 @@ const start = async () => {
       env === 'TEST' ? process.env.MONGO_TEST_URI : process.env.MONGO_URI
     );
     console.log('connected to mongodb');
-    app.listen(3000, () => {
-      console.log('Server started on port 3000');
+    app.listen(process.env.port || 3001, () => {
+      console.log(`Server started on port ${process.env.port || 3001}`);
     });
   } catch (error) {
     console.error(error);

@@ -135,7 +135,6 @@ describe('Policies', () => {
           res.body.should.haveOwnProperty('details');
           res.body.details.should.be.an('array');
           res.body.details[0].message.should.contain('coverage');
-          console.log(res.body);
           done();
         });
     });
