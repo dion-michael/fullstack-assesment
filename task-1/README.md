@@ -19,3 +19,16 @@
    : Update an existing insurance policy by ID.
 5. `DELETE /policies/:id`
    : Delete an insurance policy by ID.
+
+# Task 4
+
+## How to run the test
+
+- make sure you have mongodb installed & running
+- make sure you can run the app `(see Task 1 - how to run the app)`
+- run `npm run test` to run the test only
+- run `npm run test:coverage` to run the test with coverage
+
+## coverage
+
+![alt text](<Screenshot 2024-07-24 at 21.32.03.png>)
