@@ -36,14 +36,16 @@ class CustomError extends Error {
 }
 
 const errorHandler = (err, _req, res, _next) => {
-  console.error(err.stack);
+  // console.error(err.stack);
   let message = err.message || errorMessages[err.code] || 'an error occured';
   if (err.message && err.message.includes('Cast to ObjectId failed')) {
     message = `please provide a valid id`;
     err.status = 400;
   }
   if (err.code && errorCodes[err.code]) {
-    res.status(errorStatus[err.code]).json({ message, details: err.details });
+    return res
+      .status(errorStatus[err.code])
+      .json({ message, details: err.details });
   }
   res.status(err.status || 500).json({
     message,

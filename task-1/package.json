@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=TEST mocha tests/**/*.test.js --exit",
+    "test:coverage": "NODE_ENV=TEST nyc --reporter=text mocha tests/**/*.test.js --exit",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -19,9 +20,11 @@
     "mongoose": "^8.5.1"
   },
   "devDependencies": {
-    "chai": "^5.1.1",
-    "chai-http": "^5.0.0",
+    "chai": "^4.4.1",
+    "chai-http": "^4.4.0",
     "mocha": "^10.7.0",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "nyc": "^17.0.0",
+    "sinon": "^18.0.0"
   }
 }

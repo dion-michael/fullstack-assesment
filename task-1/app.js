@@ -15,9 +15,14 @@ app.use(router);
 
 app.use(errorHandler);
 
+const env = process.env.NODE_ENV;
+console.log({ env });
+
 const start = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(
+      env === 'TEST' ? process.env.MONGO_TEST_URI : process.env.MONGO_URI
+    );
     console.log('connected to mongodb');
     app.listen(3000, () => {
       console.log('Server started on port 3000');
@@ -29,3 +34,5 @@ const start = async () => {
 };
 
 start();
+
+module.exports = app;
